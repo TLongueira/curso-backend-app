@@ -1,5 +1,6 @@
 const express = require("express");
 const mysql = require('mysql');
+var cors = require('cors')
 
 class Server {
   constructor() {
@@ -16,6 +17,8 @@ class Server {
 
     //Lectura y parseo del body
     this.app.use ( express.json());
+
+    this.app.use(cors());
 
     //directorio
     this.app.use(express.static("public"));
